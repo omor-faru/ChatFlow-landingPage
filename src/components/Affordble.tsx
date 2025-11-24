@@ -46,7 +46,7 @@ const Affordable = () => {
   return (
     <section className='max-w-7xl mx-auto mt-16 md:mt-20 mb-18 '>
       <div className=''>
-        {/* Price */}
+       
         <div>
           <h1 className='text-3xl text-center md:text-[38px] font-bold text-[#0D082C] mb-4 px-4 md:px-0'>
             Affordable Plans for Any Business
@@ -61,14 +61,14 @@ const Affordable = () => {
           </p>
         </div>
 
-        {/* Cards */}
+      
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-4 md:px-0'>
           {cardData.map((item) => (
             <div
               key={item.id}
               className='border border-[#E4E4E4] rounded-2xl shadow-xl hover:shadow-2xl transition duration-300'
             >
-              {/* Top Text */}
+             
               <p
                 className='text-sm text-white px-3 text-center py-4 rounded-lg w-full font-bold'
                 style={{ backgroundColor: item.color }}
@@ -76,12 +76,12 @@ const Affordable = () => {
                 {item.topText}
               </p>
 
-              {/* Price */}
+             
               <h1 className='text-3xl font-bold my-3 text-[#0D082C] text-center pt-7'>
                 {item.Price}
               </h1>
 
-              {/* Checkbox List */}
+            
               <ul className='space-y-3 mb-6 px-6 mt-8'>
                 {item.list.map((l, i) => (
                   <li key={i} className='flex items-center gap-3 '>
@@ -97,7 +97,6 @@ const Affordable = () => {
                 ))}
               </ul>
 
-              {/* Button */}
               <div className='px-6 pb-8'>
                 {' '}
                 <button

@@ -1,0 +1,15 @@
+
+@import "tailwindcss";
+
+
+body {
+  font-family: sans-serif
+}
+
+
+.navbar {
+  background-image: url(../../public/WhatsApp\ Image\ 2025-11-24\ at\ 1.00.48\ PM.jpeg);
+  background-size: cover;
+}
+
+

@@ -1,33 +1,82 @@
+'use client'
+import Link from 'next/link'
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
+export default function App() {
+  const [isOpen, setIsOpen] = useState(false)
 
-
-export default function Navbar() {
   return (
-    <nav className="text-white">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <section className=''>
+      <nav className='max-w-7xl mx-auto px-4 md:px-8 py-4 relative'>
+        <div className='flex items-center justify-between'>
+         
+          <div className='flex items-center gap-16'>
+          
+            <p className='font-bold text-lg text-[#FFFFFF]'>ChatFlow</p>
 
-       
-        <div className="flex items-center gap-30">
-          <h2 className="text-2xl font-bold">ChatFlow</h2>
+      
+            <div className='hidden sm:flex gap-6'>
+              <Link href='#' className='text-[#FFFFFF] text-base  '>
+                Home
+              </Link>
+              <Link
+                href='#'
+                className='text-[#FFFFFFCC] text-base font-semibold'
+              >
+                Pricing
+              </Link>
+              <Link href='#' className='text-[#FFFFFFCC] text-base '>
+                Support
+              </Link>
+              <Link href='#' className='text-[#FFFFFFCC] text-base '>
+                Contact Us
+              </Link>
+            </div>
+          </div>
 
-          <ul className="hidden md:flex gap-8 font-medium">
-            <li className="text-gray-100 cursor-pointer">Home</li>
-            <li className="text-gray-400 cursor-pointer">Pricing</li>
-            <li className="text-gray-400 cursor-pointer">Support</li>
-            <li className="text-gray-400 cursor-pointer">Contact Us</li>
-          </ul>
+          <div className='hidden sm:flex md:justify-end gap-8'>
+            <button className='text-[#FFFFFF] text-base '>Login</button>
+            <button className='text-[#0D082C] bg-[#FFFFFF8C] px-4 py-2 rounded font-bold text-base'>
+              Register
+            </button>
+          </div>
+
+         
+          <button className='sm:hidden' onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-
-        <div className="flex gap-3">
-          <button className="px-4 py-1 rounded cursor-pointer">
-            Login
-          </button>
-          <button className="px-4 py-1 rounded-lg bg-gray-300 text-black cursor-pointer">
-            Register
-          </button>
-        </div>
-      </div>
-    </nav>
-  );
+     
+        {isOpen && (
+          <div 
+          className='sm:hidden mt-2 p-4 bg-white shadow-md flex flex-col gap-2'>
+            <Link href='#' 
+            className='py-2 px-4 hover:bg-gray-100 rounded'>
+              Home
+            </Link>
+            <Link href='#' 
+            className='py-2 px-4 bg-gray-200 rounded font-bold'>
+              Pricing
+            </Link>
+            <Link href='#' 
+            className='py-2 px-4 hover:bg-gray-100 rounded'>
+              Support
+            </Link>
+            <Link href='#' 
+            className='py-2 px-4 hover:bg-gray-100 rounded'>
+              Contact Us
+            </Link>
+            <div className='border-t mt-2 pt-2 flex flex-col gap-2'>
+              <button className='text-gray-700 text-left'>Login</button>
+              <button className='bg-[#0D082C] text-white px-4 py-2 rounded font-bold'>
+                Register
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </section>
+  )
 }

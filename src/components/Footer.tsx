@@ -70,7 +70,7 @@ export default function Footer() {
       </div>
 
   
-      <div className="text-left text-[12px] font-bold text-[#0D082C66] mt-10 px-4">
+      <div className="text-center text-[12px] font-bold text-[#0D082C66] mt-10 px-4">
         COPYRIGHT © 2022 — DESIGN BY NAUVAL
       </div>
 
